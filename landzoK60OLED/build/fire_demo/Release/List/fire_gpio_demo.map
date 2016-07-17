@@ -1,0 +1,348 @@
+###############################################################################
+#
+# IAR ELF Linker V7.70.1.11437/W32 for ARM                03/Jul/2016  14:25:06
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Exe\fire_gpio_demo.out
+#    Map file     =  
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\List\fire_gpio_demo.map
+#    Command line =  
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\adc.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\alloc.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\arm_cm4.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\assert.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\AT24C02.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\crt0.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\delay.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\dma.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\exti.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\FTM.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\gpio.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\i2c.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\io.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\isr.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\lptmr.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\main.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\mcg.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\memtest.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\OLED.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\PIT.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\printf.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\queue.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\start.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\startup.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\stdlib.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\sysinit.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\uart.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\uif.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\vectors.o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj\wdog.o -o
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\Exe\fire_gpio_demo.out
+#        --map
+#        E:\IARProj\landzoK60OLED\build\fire_demo\Release\List\fire_gpio_demo.map
+#        --config "E:\IARProj\landzoK60OLED\build\fire_demo\..\config
+#        files\fire_ROM_K60N512.icf" --semihosting --entry __iar_program_start
+#        --inline --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00000000 { ro section .intvec };
+"A1":  place at 0x00000410 { ro section .noinit };
+"P1":  place in [from 0x00000000 to 0x00040000] { ro, block CodeRelocate };
+"P2":  place in [from 0x1fff0410 to 0x20010000] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+initialize manually with packing = copy, complex ranges { section .data };
+initialize manually with packing = copy, complex ranges { section .textrw };
+
+  Section              Kind        Address    Size  Object
+  -------              ----        -------    ----  ------
+"A0":                                        0x410
+  .intvec              const    0x00000000   0x410  vectors.o [1]
+                              - 0x00000410   0x410
+
+"A1":                                         0x3c
+  .noinit              ro code  0x00000410    0x3c  crt0.o [1]
+                              - 0x0000044c    0x3c
+
+"P1":                                       0x1d54
+  .text                ro code  0x0000044c   0xb7c  OLED.o [1]
+  .text                ro code  0x00000fc8    0x5c  gpio.o [1]
+  .text                ro code  0x00001024   0x52c  printf.o [1]
+  .text                ro code  0x00001550    0x14  stdlib.o [1]
+  .text                ro code  0x00001564   0x304  isr.o [1]
+  .text                ro code  0x00001868   0x168  uart.o [1]
+  .text                ro code  0x000019d0   0x13c  arm_cm4.o [1]
+  Veneer               ro code  0x00001b0c     0x8  - Linker created -
+  .text                ro code  0x00001b14   0x1bc  mcg.o [1]
+  .text                ro code  0x00001cd0   0x120  main.o [1]
+  .text                ro code  0x00001df0    0x40  PIT.o [1]
+  .text                ro code  0x00001e30    0x76  ABImemcpy_unaligned.o [4]
+  .text                ro code  0x00001ea8    0x6c  startup.o [1]
+  .text                ro code  0x00001f14     0x6  ABImemclr.o [4]
+  .text                ro code  0x00001f1c    0x5e  ABImemset.o [4]
+  CodeRelocate                  0x00001f7c    0x48  <Block>
+    Initializer bytes  const    0x00001f7c    0x48  <for CodeRelocateRam-1>
+  .data_init                    0x00001fc4    0x48  <Block>
+    Initializer bytes  const    0x00001fc4    0x48  <for .data-1>
+  .text                ro code  0x0000200c    0x44  sysinit.o [1]
+  .text                ro code  0x00002050    0x40  vectors.o [1]
+  .text                ro code  0x00002090    0x40  zero_init3.o [4]
+  .text                ro code  0x000020d0    0x30  wdog.o [1]
+  .text                ro code  0x00002100    0x28  data_init.o [4]
+  .iar.init_table      const    0x00002128    0x10  - Linker created -
+  .text                ro code  0x00002138    0x1a  cmain.o [4]
+  .text                ro code  0x00002152     0x4  exit.o [3]
+  .text                ro code  0x00002158     0xa  cexit.o [4]
+  .text                ro code  0x00002164    0x14  exit.o [5]
+  .text                ro code  0x00002178    0x14  start.o [1]
+  .text                ro code  0x0000218c     0xc  cstartup_M.o [4]
+  .text                ro code  0x00002198     0x8  io.o [1]
+  .rodata              const    0x000021a0     0x0  zero_init3.o [4]
+                              - 0x000021a0  0x1d54
+
+"P2", part 1 of 2:                            0x90
+  CodeRelocateRam               0x1fff0410    0x48  <Block>
+    CodeRelocateRam-1           0x1fff0410    0x48  <Init block>
+      .textrw          inited   0x1fff0410    0x48  mcg.o [1]
+  .data                         0x1fff0458    0x48  <Block>
+    .data-1                     0x1fff0458    0x48  <Init block>
+      .data            inited   0x1fff0458    0x28  gpio.o [1]
+      .data            inited   0x1fff0480     0x8  mcg.o [1]
+      .data            inited   0x1fff0488    0x18  uart.o [1]
+                              - 0x1fff04a0    0x90
+
+"P2", part 2 of 2:                            0x28
+  .bss                          0x1fff04a0    0x28  <Block>
+    .bss               zero     0x1fff04a0     0xc  sysinit.o [1]
+    .bss               zero     0x1fff04ac    0x10  isr.o [1]
+    .bss               zero     0x1fff04bc     0x6  isr.o [1]
+    .bss               zero     0x1fff04c2     0x3  isr.o [1]
+    .bss               zero     0x1fff04c5     0x1  isr.o [1]
+    .bss               zero     0x1fff04c6     0x1  isr.o [1]
+                              - 0x1fff04c8    0x28
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x27:
+          0x1fff04a0  0x27
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  rw code  ro data  rw data
+    ------                 -------  -------  -------  -------
+E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj: [1]
+    OLED.o                   2 940
+    PIT.o                       64
+    arm_cm4.o                  316
+    crt0.o                      60
+    gpio.o                      92                40       40
+    io.o                         8
+    isr.o                      772                         27
+    main.o                     288
+    mcg.o                      444       72       80        8
+    printf.o                 1 324
+    start.o                     20
+    startup.o                  108
+    stdlib.o                    20
+    sysinit.o                   68                         12
+    uart.o                     360                24       24
+    vectors.o                   64             1 040
+    wdog.o                      48
+    ---------------------------------------------------------
+    Total:                   6 996       72    1 184      111
+
+command line: [2]
+    ---------------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                       4
+    ---------------------------------------------------------
+    Total:                       4
+
+rt7M_tl.a: [4]
+    ABImemclr.o                  6
+    ABImemcpy_unaligned.o      118
+    ABImemset.o                 94
+    cexit.o                     10
+    cmain.o                     26
+    cstartup_M.o                12
+    data_init.o                 40
+    zero_init3.o                64
+    ---------------------------------------------------------
+    Total:                     370
+
+shb_l.a: [5]
+    exit.o                      20
+    ---------------------------------------------------------
+    Total:                      20
+
+    Gaps                         8
+    Linker created               8                16
+-------------------------------------------------------------
+    Grand Total:             7 406       72    1 200      111
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.bss$$Base              0x1fff04a0          --   Gb  - Linker created -
+.bss$$Limit             0x1fff04c8          --   Gb  - Linker created -
+.data$$Base             0x1fff0458          --   Gb  - Linker created -
+.data$$Limit            0x1fff04a0          --   Gb  - Linker created -
+.data_init$$Base        0x00001fc4          --   Gb  - Linker created -
+.data_init$$Limit       0x0000200c          --   Gb  - Linker created -
+.iar.init_table$$Base   0x00002128          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00002138          --   Gb  - Linker created -
+?main                   0x00002139         Code  Gb  cmain.o [4]
+CodeRelocate$$Base      0x00001f7c          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x00001fc4          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1fff0410          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1fff0458          --   Gb  - Linker created -
+DMA_CH0_Handler         0x000017a5   0x1e  Code  Gb  isr.o [1]
+DMA_CH4_Handler         0x00001783   0x22  Code  Gb  isr.o [1]
+DMA_Over_Flg            0x1fff04c5    0x1  Data  Gb  isr.o [1]
+F14x16                  0x00000888  0x150  Data  Gb  OLED.o [1]
+F14x16_Idx              0x0000086c   0x1c  Data  Gb  OLED.o [1]
+F8X16                   0x000009d8  0x5f0  Data  Gb  OLED.o [1]
+FTM0_IRQHandler         0x00001755    0x2  Code  Gb  isr.o [1]
+FTM1_IRQHandler         0x00001757   0x2c  Code  Gb  isr.o [1]
+GPIOx                   0x1fff0458   0x14  Data  Gb  gpio.o [1]
+HardFault_Handler       0x0000161b    0xe  Code  Gb  isr.o [1]
+LPT_Handler             0x000017c3   0x14  Code  Gb  isr.o [1]
+LPT_INT_count           0x1fff04c6    0x1  Data  Gb  isr.o [1]
+OLED_Fill               0x000004d3   0x30  Code  Gb  OLED.o [1]
+OLED_Init               0x00000503  0x124  Code  Gb  OLED.o [1]
+OLED_P14x16Str          0x000006f9  0x11c  Code  Gb  OLED.o [1]
+OLED_P8x16Str           0x00000627   0xd2  Code  Gb  OLED.o [1]
+OLED_Print              0x00000815   0x50  Code  Gb  OLED.o [1]
+OLED_WrCmd              0x00000491   0x42  Code  Gb  OLED.o [1]
+OLED_WrDat              0x0000044d   0x42  Code  Gb  OLED.o [1]
+PIT0_IRQHandler         0x000015ab   0x6c  Code  Gb  isr.o [1]
+PIT1Count               0x1fff04c4    0x1  Data  Gb  isr.o [1]
+PIT1_IRQHandler         0x00001587   0x24  Code  Gb  isr.o [1]
+PIT2_IRQHandler         0x000016f7   0x5e  Code  Gb  isr.o [1]
+PORTB_IRQHandler        0x000016d7   0x20  Code  Gb  isr.o [1]
+PORTD_IRQHandler        0x00001629   0xae  Code  Gb  isr.o [1]
+PORTX                   0x1fff046c   0x14  Data  Gb  gpio.o [1]
+PendSV_Handler          0x00001619    0x2  Code  Gb  isr.o [1]
+Region$$Table$$Base     0x00002128          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00002138          --   Gb  - Linker created -
+Reset_Handler           0x00000411         Code  Gb  crt0.o [1]
+SysTick_Handler         0x00001617    0x2  Code  Gb  isr.o [1]
+TIME0flag_10ms          0x1fff04bd    0x1  Data  Gb  isr.o [1]
+TIME0flag_15ms          0x1fff04be    0x1  Data  Gb  isr.o [1]
+TIME0flag_20ms          0x1fff04bf    0x1  Data  Gb  isr.o [1]
+TIME0flag_5ms           0x1fff04bc    0x1  Data  Gb  isr.o [1]
+TIME0flag_80ms          0x1fff04c0    0x1  Data  Gb  isr.o [1]
+TIME1flag_1s            0x1fff04c2    0x1  Data  Gb  isr.o [1]
+TIME1flag_3s            0x1fff04c3    0x1  Data  Gb  isr.o [1]
+TimeCount               0x1fff04c1    0x1  Data  Gb  isr.o [1]
+UARTx                   0x1fff0488   0x18  Data  Gb  uart.o [1]
+USART1_IRQHandler       0x00001565   0x22  Code  Gb  isr.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x2000fff8         Data  Gb  command line/config [2]
+__VECTOR_RAM {Abs}      0x1fff0000         Data  Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00000000         Data  Gb  command line/config [2]
+__aeabi_memclr          0x00001f15         Code  Gb  ABImemclr.o [4]
+__cmain                 0x00002139         Code  Gb  cmain.o [4]
+__code_start__ {Abs}    0x00000410         Data  Gb  command line/config [2]
+__exit                  0x00002165   0x14  Code  Gb  exit.o [5]
+__iar_Memset_word       0x00001f1d         Code  Gb  ABImemset.o [4]
+__iar_data_init3        0x00002101   0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x0000218d         Code  Gb  cstartup_M.o [4]
+__iar_unaligned___aeabi_memcpy
+                        0x00001e31         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned___aeabi_memcpy4
+                        0x00001e51         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned___aeabi_memcpy8
+                        0x00001e51         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_zero_init3        0x00002091   0x40  Code  Gb  zero_init3.o [4]
+__vector_table          0x00000000  0x410  Data  Gb  vectors.o [1]
+_call_main              0x00002145         Code  Gb  cmain.o [4]
+_exit                   0x00002159         Code  Gb  cexit.o [4]
+_main                   0x0000214f         Code  Gb  cmain.o [4]
+bus_clk_khz             0x1fff04a8    0x4  Data  Gb  sysinit.o [1]
+common_startup          0x00001ea9   0x6c  Code  Gb  startup.o [1]
+core_clk_khz            0x1fff04a0    0x4  Data  Gb  sysinit.o [1]
+core_clk_mhz            0x1fff04a4    0x4  Data  Gb  sysinit.o [1]
+default_isr             0x00002051    0xc  Code  Gb  vectors.o [1]
+disable_irq             0x00001a35   0x52  Code  Gb  arm_cm4.o [1]
+enable_irq              0x000019d7   0x5e  Code  Gb  arm_cm4.o [1]
+exit                    0x00002153    0x4  Code  Gb  exit.o [3]
+gpio_init               0x00000fc9   0x56  Code  Gb  gpio.o [1]
+key10cout               0x1fff04b8    0x2  Data  Gb  isr.o [1]
+key10flg                0x1fff04b1    0x1  Data  Gb  isr.o [1]
+key10start              0x1fff04b0    0x1  Data  Gb  isr.o [1]
+key11cout               0x1fff04ba    0x2  Data  Gb  isr.o [1]
+key11flg                0x1fff04b3    0x1  Data  Gb  isr.o [1]
+key11start              0x1fff04b2    0x1  Data  Gb  isr.o [1]
+key8cout                0x1fff04b4    0x2  Data  Gb  isr.o [1]
+key8flg                 0x1fff04ad    0x1  Data  Gb  isr.o [1]
+key8start               0x1fff04ac    0x1  Data  Gb  isr.o [1]
+key9cout                0x1fff04b6    0x2  Data  Gb  isr.o [1]
+key9flg                 0x1fff04af    0x1  Data  Gb  isr.o [1]
+key9start               0x1fff04ae    0x1  Data  Gb  isr.o [1]
+main                    0x00001cd1   0xd6  Code  Gb  main.o [1]
+mcg_div                 0x1fff0480    0x8  Data  Gb  mcg.o [1]
+out_char                0x00002199    0x8  Code  Gb  io.o [1]
+pit_init                0x00001df1   0x16  Code  Gb  PIT.o [1]
+pll_init                0x00001b15  0x1bc  Code  Gb  mcg.o [1]
+printf                  0x0000152d   0x1e  Code  Gb  printf.o [1]
+printk                  0x0000111f  0x40e  Code  Gb  printf.o [1]
+printk_mknumstr         0x0000104f   0x64  Code  Lc  printf.o [1]
+printk_pad_space        0x000010e9   0x36  Code  Lc  printf.o [1]
+printk_pad_zero         0x000010b3   0x36  Code  Lc  printf.o [1]
+printk_putc             0x00001025   0x2a  Code  Lc  printf.o [1]
+set_sys_dividers        0x1fff0411   0x48  Code  Gb  mcg.o [1]
+start                   0x00002179   0x14  Code  Gb  start.o [1]
+strlen                  0x00001551   0x14  Code  Gb  stdlib.o [1]
+sysinit                 0x0000200d   0x3c  Code  Gb  sysinit.o [1]
+uart_getchar            0x00001971   0x10  Code  Gb  uart.o [1]
+uart_init               0x00001869  0x108  Code  Gb  uart.o [1]
+uart_putchar            0x00001981   0x10  Code  Gb  uart.o [1]
+uart_sendStr            0x00001991   0x1e  Code  Gb  uart.o [1]
+wdog_disable            0x000020d1   0x14  Code  Gb  wdog.o [1]
+wdog_unlock             0x000020e5   0x14  Code  Gb  wdog.o [1]
+write_vtor              0x000019d1    0x6  Code  Gb  arm_cm4.o [1]
+
+
+[1] = E:\IARProj\landzoK60OLED\build\fire_demo\Release\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  7 406 bytes of readonly  code memory
+     72 bytes of readwrite code memory
+  1 200 bytes of readonly  data memory
+    111 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
