@@ -1,4 +1,4 @@
-"E:\IARProj\landzoK60OLED\src\cpu\arm_cm4.c"
+"E:\IARProj\landzoK60OLED\src\drivers\dac\dac.c"
 -std=c99
 -ferror-limit=100
 -I

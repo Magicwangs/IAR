@@ -2386,6 +2386,9 @@
       <name>$PROJ_DIR$\..\..\src\drivers\AT24C02\AT24C02.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\src\drivers\dac\dac.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\src\drivers\delay\delay.c</name>
     </file>
     <file>
@@ -2423,6 +2426,9 @@
     <name>header</name>
     <file>
       <name>$PROJ_DIR$\..\..\src\common\common.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\src\drivers\dac\dac.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\src\drivers\delay\delay.h</name>

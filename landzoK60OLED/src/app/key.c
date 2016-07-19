@@ -21,6 +21,7 @@ double U20=29.0;
 extern int modeflag;
 extern double Kp_i;
 extern double Ki_i;
+extern int test_flag;
 
 
 extern double Kp_u;
@@ -132,9 +133,10 @@ void Key_Event(void)
         
         case 10:I_Set=1.0;U20=29.0;Kp_i=20.0;Ki_i=0.3;Kp_u=20.0;Ki_u=0.5;break;
         
-        case 13:start_flag=1;break;
+        case 13:start_flag=1;test_flag=0;break;
         case 12:modeflag=1;break;
         
+        case 11:test_flag=1;break;
         default:break;
         
         }

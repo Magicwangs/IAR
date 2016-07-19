@@ -50,3 +50,16 @@ void  delayms(uint32  ms)
         }
     }
 }
+
+void  delayus(uint32  us)
+{
+
+    uint32  i, j;
+    for(i = 0; i < us; i++)
+    {
+        for(j = bus_clk_khz/1000; j > 0; j--)
+        {
+            asm("nop");
+        }
+    }
+}

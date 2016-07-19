@@ -38,6 +38,8 @@
 #include "key.h"
 #include "delay.h"
 
+#include "dac.h"
+
 //#include  "isr.h"      //isr
 
 

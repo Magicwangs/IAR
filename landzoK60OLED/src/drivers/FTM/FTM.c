@@ -749,3 +749,5 @@ void  FTM0_Duty_Change(int duty)
    FTM0_C3V=(int)(duty*1.0/1000*mod);
    FTM0_SYNC|=FTM_SYNC_SWSYNC_MASK;//使能软件触发    
 }
+
+

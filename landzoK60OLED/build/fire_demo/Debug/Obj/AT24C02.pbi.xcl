@@ -16,6 +16,8 @@ E:\IARProj\landzoK60OLED\build\fire_demo\..\..\src\drivers
 -I
 E:\IARProj\landzoK60OLED\build\fire_demo\..\..\src\drivers\adc
 -I
+E:\IARProj\landzoK60OLED\build\fire_demo\..\..\src\drivers\dac
+-I
 E:\IARProj\landzoK60OLED\build\fire_demo\..\..\src\drivers\AT24C02
 -I
 E:\IARProj\landzoK60OLED\build\fire_demo\..\..\src\drivers\exti
@@ -79,6 +81,8 @@ E:\IARProj\landzoK60OLED\src\platforms
 E:\IARProj\landzoK60OLED\src\drivers
 -I
 E:\IARProj\landzoK60OLED\src\drivers\adc
+-I
+E:\IARProj\landzoK60OLED\src\drivers\dac
 -I
 E:\IARProj\landzoK60OLED\src\drivers\AT24C02
 -I

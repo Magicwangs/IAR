@@ -19,5 +19,6 @@
 
 void  delay(void);          //—” ±‘º500ms
 void  delayms(uint32  ms);
+void  delayus(uint32  us);
 
 #endif

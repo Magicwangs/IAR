@@ -323,6 +323,7 @@
           <state>$PROJ_DIR$\..\..\src\platforms</state>
           <state>$PROJ_DIR$\..\..\src\drivers</state>
           <state>$PROJ_DIR$\..\..\src\drivers\adc</state>
+          <state>$PROJ_DIR$\..\..\src\drivers\dac</state>
           <state>$PROJ_DIR$\..\..\src\drivers\AT24C02</state>
           <state>$PROJ_DIR$\..\..\src\drivers\exti</state>
           <state>$PROJ_DIR$\..\..\src\drivers\delay</state>
@@ -2052,6 +2053,9 @@
       <name>$PROJ_DIR$\..\..\src\drivers\AT24C02\AT24C02.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\src\drivers\dac\dac.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\src\drivers\delay\delay.c</name>
     </file>
     <file>
@@ -2089,6 +2093,9 @@
     <name>header</name>
     <file>
       <name>$PROJ_DIR$\..\..\src\common\common.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\src\drivers\dac\dac.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\src\drivers\delay\delay.h</name>

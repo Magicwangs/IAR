@@ -40,6 +40,9 @@ extern double U2_present_value;
 extern double I_Set;
 extern double U20;
 
+
+int test_flag=0;
+
 double Kp_i=20.0;
 double Ki_i=0.3;
 double Kd_i=0.0;
@@ -66,6 +69,8 @@ char buf[20];
 unsigned int PWM_Voltage=640,PWM_Current=640;
 
 
+
+
 void Pot_Show(int x,int y,double final_adc);
 void OLED_Light();
 void Refresh_Present();
@@ -73,6 +78,9 @@ void Refresh_Key();
 void PID_control();
 void Curent_PID();
 void Voltage_PID();
+
+
+
 
 void main()
 {
@@ -94,13 +102,14 @@ void main()
    adc_init(ADC0,AD10); //A7
    adc_init(ADC0,AD12);  //B2
    
-   FTM_PWM_init(FTM0, CH2 ,2000,0);
+   FTM_PWM_init(FTM0, CH2 ,20000,0);
    
-   FTM_PWM_init(FTM0, CH3 ,2000,0);
-   //FTM_PWM_init(FTM0, CH1 ,2000,10);
+   FTM_PWM_init(FTM0, CH3 ,20000,0);
    
-  
+   //dac_once_init(DAC0,VDDA);
 
+   
+   //pit_init_us(PIT1, 300);  
 
    EnableInterrupts;			                    //¿ª×ÜÖÐ¶Ï
 
@@ -114,9 +123,7 @@ void main()
     ******************************************/
     while(1)
     {
-        
-        Key_Event();
-
+        Key_Event(); 
     }
 
 }
@@ -183,11 +190,6 @@ void Refresh_Key()
 
   Pot_Show(90,4,Ki_u);
   
-
-  Pot_Show(92,6,modeflag);
-  
-  
-  
 }
 
 void Refresh_Present()
@@ -206,6 +208,8 @@ void Refresh_Present()
   Pot_Show(35,5,PWM_Current/10);
   
   Pot_Show(35,6,PWM_Voltage/10);
+  
+  Pot_Show(92,6,modeflag);
 }
 
 
@@ -239,14 +243,16 @@ void PID_control()
   {
     if(ftm_flag==0)
     {
-      FTM0_Init(10000 ,640);
+      FTM0_Init(20000 ,640);
+      PWM_Current_temp=640;
+      PWM_Voltage_temp=640;
     }
     ftm_flag=1;
     
     if(modeflag==0)
     {
-      //Curent_PID();
-      //FTM0_Duty_Change(PWM_Current);
+      Curent_PID();
+      FTM0_Duty_Change(PWM_Current);
     }
     else
     {
