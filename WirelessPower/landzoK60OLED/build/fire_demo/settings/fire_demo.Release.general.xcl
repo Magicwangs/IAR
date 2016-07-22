@@ -1,0 +1,13 @@
+"E:\IAR\arm\bin\armproc.dll" 
+
+"E:\IAR\arm\bin\armjlink2.dll" 
+
+"E:\IARProj\landzoK60OLED\build\fire_demo\Release\Exe\fire_gpio_demo.out" 
+
+--plugin "E:\IAR\arm\bin\armbat.dll" 
+
+--device_macro "E:\IAR\arm\config\debugger\NXP\Kxx.dmac" 
+
+
+
+

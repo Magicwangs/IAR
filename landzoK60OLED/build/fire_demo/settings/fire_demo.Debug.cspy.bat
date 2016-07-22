@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"E:\IAR\common\bin\cspybat" -f "E:\IARProj\landzoK60OLED\build\fire_demo\settings\fire_demo.Debug.general.xcl" --backend -f "E:\IARProj\landzoK60OLED\build\fire_demo\settings\fire_demo.Debug.driver.xcl" 
+"E:\IAR\common\bin\cspybat" -f "E:\GitProj\IAR\IAR\landzoK60OLED\build\fire_demo\settings\fire_demo.Debug.general.xcl" --backend -f "E:\GitProj\IAR\IAR\landzoK60OLED\build\fire_demo\settings\fire_demo.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"E:\IAR\common\bin\cspybat" -f "E:\IARProj\landzoK60OLED\build\fire_demo\settings\fire_demo.Debug.general.xcl" "--debug_file=%~1" --backend -f "E:\IARProj\landzoK60OLED\build\fire_demo\settings\fire_demo.Debug.driver.xcl" 
+"E:\IAR\common\bin\cspybat" -f "E:\GitProj\IAR\IAR\landzoK60OLED\build\fire_demo\settings\fire_demo.Debug.general.xcl" "--debug_file=%~1" --backend -f "E:\GitProj\IAR\IAR\landzoK60OLED\build\fire_demo\settings\fire_demo.Debug.driver.xcl" 
 
 @echo off 
 :end

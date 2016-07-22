@@ -1,0 +1,15 @@
+"E:\IAR\arm\bin\armproc.dll" 
+
+"E:\IAR\arm\bin\armjlink2.dll" 
+
+"E:\GitProj\IAR\IAR\WirelessPower\landzoK60OLED\build\fire_demo\Debug\Exe\fire_gpio_demo.out" 
+
+--plugin "E:\IAR\arm\bin\armbat.dll" 
+
+--device_macro "E:\IAR\arm\config\debugger\NXP\Kxx.dmac" 
+
+--flash_loader "E:\IAR\arm\config\flashloader\NXP\FlashK60Dxxx128K.board" 
+
+
+
+
