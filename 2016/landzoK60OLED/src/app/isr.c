@@ -44,6 +44,8 @@ u16  TimeCount = 0 ;
 extern int Power_Flag;
 int sin_count=0;
 
+extern int pwm_gain;
+extern double pwm_gain_temp;
 extern double U0_present_value;
 extern double I0_present_value;
 extern double U2_present_value;
@@ -122,26 +124,23 @@ void PIT1_IRQHandler(void)
 void PIT0_IRQHandler(void)
 {
    DisableInterrupts; 
-  
-  I0_present_max=I0_sample_max*3.3/4095;
-  U0_present_max=U0_sample_max*3.3/4095;
-  
-   if(I0_present_max>=3.5)  //2.5为有效值
-  {
-    gpio_set(PORTB ,5,0);
-    Power_Flag=0;
-  }
-  
-   TimeCount++;
-   if(TimeCount==3000)
-   {
-     Refresh_Present();
-     TimeCount=0;
-     U0_present_max=0;
-     I0_present_max=0;
-
-   }
-
+            if(I0_present_max>=18)  //2.5为有效值
+            {
+              gpio_set(PORTB ,5,1);//高电平关闭
+              Power_Flag=0;
+            }
+            
+            TimeCount++;
+            if(TimeCount==4000)
+            {
+              Refresh_Present();
+              TimeCount=0;
+              U0_present_max=0;
+              I0_present_max=0;
+               pwm_gain=pwm_gain_temp;
+            }
+             
+            
   EnableInterrupts;
   PIT_Flag_Clear(PIT0);       //清中断标志位
 }

@@ -8,6 +8,8 @@ u8 key_Flag;         //按键是否已放开：1--是，0--否
 
 float input_val;
 u8 pot_flag;
+extern double pwm_gain_temp;
+extern int pwm_gain;
 
 //设置键盘逻辑键值与程序计算键值的映射
 //u8 key_Map[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
@@ -22,7 +24,7 @@ extern int Power_Flag;
 
 extern int group_id;
 
-
+extern int PID;
 
 extern double Kp_u;
 extern double Ki_u;
@@ -121,23 +123,26 @@ void Key_Event(void)
         case 2:f0_set+=10;break;
         case 5:f0_set-=10;break;
           
-        
         case 7:Kp_u+=1;break;
         case 14:Kp_u-=1;break;
         
-        case 8:Ki_u+=0.01;break;
-        case 0:Ki_u-=0.01;break;
+        case 3:pwm_gain+=1;break;
+        case 6:pwm_gain-=1;break;
+        
+        case 9:Ki_u+=1;break;
+        case 15:Ki_u-=1;break;
         
         case 10:start_flag=1;break;
         
-        case 11:f0_set=50;Kp_u=20;Ki_u=0.5;Power_Flag=1;break;
-        
+        case 11:f0_set=50;Kp_u=38;Ki_u=1;Power_Flag=1;break;
 
+        case 12:PID=0;pwm_gain_temp=10;break;
+        
         default:break;
         
         }
         
-        key_val=15;
+        key_val=0;
         
         Refresh_Key();
     }
